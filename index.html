@@ -7,5 +7,16 @@
 </head>
 <body>
     Teste inicial
+    <p id="text"></p>
 </body>
+<script>
+    fetch("https://trecegourmet-wm3qo5pm.b4a.run/ping")
+    .then((resp)=> resp.json())
+    .then((data) => {
+        document.getElementById("text").innerHTML = data.message;
+    })
+    .catch((error) => {
+        console.error('Error:', error);
+    });
+</script>
 </html>
